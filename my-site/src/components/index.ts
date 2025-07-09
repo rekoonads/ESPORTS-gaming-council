@@ -6,3 +6,6 @@ export { default as Footer } from "./layout/Footer";
 export { default as Hero } from "./Hero";
 export { default as ArticleCard } from "./ArticleCard";
 export { default as Prose } from "./Prose";
+export { default as CategoryNav } from "./filters/CategoryNav";
+export { default as SortSelect } from "./filters/SortSelect";
+export { default as SearchBar } from "./filters/SearchBar";
