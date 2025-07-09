@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Gaming, Reviews, News & Entertainment</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="region-selector">
+                    <i class="fas fa-globe"></i>
+                    <select id="region">
+                        <option value="global">Global</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="in">India</option>
+                        <option value="jp">Japan</option>
+                        <option value="au">Australia</option>
+                    </select>
+                </div>
+                <div class="auth-links">
+                    <a href="#" class="login-btn">Login</a>
+                    <a href="#" class="register-btn">Register</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.svg" alt="GameHub">
+                        <span class="logo-text">GameHub</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#">Gaming <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h4>Platforms</h4>
+                                    <a href="gaming/pc.html">PC</a>
+                                    <a href="gaming/playstation.html">PlayStation</a>
+                                    <a href="gaming/xbox.html">Xbox</a>
+                                    <a href="gaming/nintendo.html">Nintendo</a>
+                                    <a href="gaming/mobile.html">Mobile</a>
+                                </div>
+                                <div class="dropdown-section">
+                                    <h4>Content</h4>
+                                    <a href="reviews.html">Reviews</a>
+                                    <a href="previews.html">Previews</a>
+                                    <a href="guides.html">Guides</a>
+                                    <a href="esports.html">Esports</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li class="dropdown">
+                            <a href="#">Entertainment <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h4>Categories</h4>
+                                    <a href="entertainment/movies.html">Movies</a>
+                                    <a href="entertainment/tv.html">TV Shows</a>
+                                    <a href="entertainment/anime.html">Anime & Manga</a>
+                                    <a href="entertainment/tech.html">Tech</a>
+                                    <a href="entertainment/comics.html">Comics</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="guides.html">Guides</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search games, news, reviews...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-main">
+            <div class="hero-content">
+                <span class="hero-category">FEATURED REVIEW</span>
+                <h1>Stellar Odyssey 2: The Ultimate Space Adventure</h1>
+                <p>The highly anticipated sequel delivers an incredible journey through the cosmos with stunning visuals and revolutionary gameplay mechanics.</p>
+                <div class="hero-meta">
+                    <span class="score">9.5</span>
+                    <span class="platform">PC, PS5, Xbox Series X|S</span>
+                    <span class="date">2 hours ago</span>
+                </div>
+                <a href="#" class="cta-btn">Read Full Review</a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero-game.jpg" alt="Stellar Odyssey 2">
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-sidebar">
+            <div class="trending-stories">
+                <h3>Trending Now</h3>
+                <div class="trending-item">
+                    <img src="assets/images/trending-1.jpg" alt="Breaking News">
+                    <div class="trending-content">
+                        <span class="category">Breaking</span>
+                        <h4>Next-Gen Console Update Brings Revolutionary Features</h4>
+                        <span class="time">1 hour ago</span>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <img src="assets/images/trending-2.jpg" alt="Exclusive">
+                    <div class="trending-content">
+                        <span class="category">Exclusive</span>
+                        <h4>Developer Interview: The Future of VR Gaming</h4>
+                        <span class="time">3 hours ago</span>
+                    </div>
+                </div>
+                <div class="trending-item">
+                    <img src="assets/images/trending-3.jpg" alt="Esports">
+                    <div class="trending-content">
+                        <span class="category">Esports</span>
+                        <h4>Championship Finals Set Record Viewership</h4>
+                        <span class="time">5 hours ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Latest News Section -->
+            <section class="latest-news">
+                <div class="section-header">
+                    <h2>Latest News</h2>
+                    <div class="filter-tabs">
+                        <button class="tab-btn active" data-filter="all">All</button>
+                        <button class="tab-btn" data-filter="gaming">Gaming</button>
+                        <button class="tab-btn" data-filter="tech">Tech</button>
+                        <button class="tab-btn" data-filter="entertainment">Entertainment</button>
+                    </div>
+                </div>
+                
+                <div class="news-grid">
+                    <article class="news-card featured" data-category="gaming">
+                        <div class="news-image">
+                            <img src="assets/images/news-1.jpg" alt="Major Gaming Update">
+                            <span class="live-badge">LIVE</span>
+                        </div>
+                        <div class="news-content">
+                            <span class="category">Gaming</span>
+                            <h3>Major Gaming Platform Announces Groundbreaking Features</h3>
+                            <p>Revolutionary new features that will change how gamers interact with their favorite titles...</p>
+                            <div class="news-meta">
+                                <span class="author">By Alex Chen</span>
+                                <span class="time">45 minutes ago</span>
+                                <span class="comments">156 comments</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card" data-category="tech">
+                        <div class="news-image">
+                            <img src="assets/images/news-2.jpg" alt="Tech Innovation">
+                        </div>
+                        <div class="news-content">
+                            <span class="category">Tech</span>
+                            <h3>Revolutionary AI Technology Transforms Game Development</h3>
+                            <div class="news-meta">
+                                <span class="author">By Sarah Johnson</span>
+                                <span class="time">1 hour ago</span>
+                                <span class="comments">89 comments</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card" data-category="entertainment">
+                        <div class="news-image">
+                            <img src="assets/images/news-3.jpg" alt="Movie News">
+                        </div>
+                        <div class="news-content">
+                            <span class="category">Movies</span>
+                            <h3>Highly Anticipated Sci-Fi Blockbuster Gets New Trailer</h3>
+                            <div class="news-meta">
+                                <span class="author">By Mike Rodriguez</span>
+                                <span class="time">2 hours ago</span>
+                                <span class="comments">234 comments</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card" data-category="gaming">
+                        <div class="news-image">
+                            <img src="assets/images/news-4.jpg" alt="Esports News">
+                        </div>
+                        <div class="news-content">
+                            <span class="category">Esports</span>
+                            <h3>World Championship Tournament Reaches New Heights</h3>
+                            <div class="news-meta">
+                                <span class="author">By Lisa Park</span>
+                                <span class="time">3 hours ago</span>
+                                <span class="comments">567 comments</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <button class="load-more-btn">Load More Stories</button>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="reviews-section">
+                <div class="section-header">
+                    <h2>Latest Reviews</h2>
+                    <a href="reviews.html" class="view-all">View All Reviews</a>
+                </div>
+                
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-image">
+                            <img src="assets/images/review-1.jpg" alt="Game Review">
+                            <div class="score-badge">9.2</div>
+                        </div>
+                        <div class="review-content">
+                            <h3>Cyberpunk Adventure: Neon Dreams</h3>
+                            <p>A masterpiece of storytelling and visual design that sets new standards for the genre.</p>
+                            <div class="platforms">
+                                <span>PC</span>
+                                <span>PS5</span>
+                                <span>Xbox Series X|S</span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="reviewer">Reviewed by John Davis</span>
+                                <span class="date">Yesterday</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-image">
+                            <img src="assets/images/review-2.jpg" alt="Game Review">
+                            <div class="score-badge">8.7</div>
+                        </div>
+                        <div class="review-content">
+                            <h3>Fantasy Quest: Realm of Legends</h3>
+                            <p>An epic adventure that delivers solid gameplay despite some technical issues.</p>
+                            <div class="platforms">
+                                <span>PC</span>
+                                <span>Switch</span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="reviewer">Reviewed by Emma Wilson</span>
+                                <span class="date">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-image">
+                            <img src="assets/images/review-3.jpg" alt="Movie Review">
+                            <div class="score-badge">7.8</div>
+                        </div>
+                        <div class="review-content">
+                            <h3>Galactic Warriors: The Movie</h3>
+                            <p>A visually stunning adaptation that stays true to the beloved game series.</p>
+                            <div class="platforms">
+                                <span>In Theaters</span>
+                                <span>Streaming</span>
+                            </div>
+                            <div class="review-meta">
+                                <span class="reviewer">Reviewed by Robert Kim</span>
+                                <span class="date">3 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Videos Section -->
+            <section class="videos-section">
+                <div class="section-header">
+                    <h2>Latest Videos</h2>
+                    <a href="videos.html" class="view-all">View All Videos</a>
+                </div>
+                
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="assets/images/video-1.jpg" alt="Video Thumbnail">
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <span class="duration">12:45</span>
+                        </div>
+                        <div class="video-content">
+                            <h3>Top 10 Games of 2025 So Far</h3>
+                            <p>Our comprehensive list of the year's best games across all platforms.</p>
+                            <div class="video-meta">
+                                <span class="views">1.2M views</span>
+                                <span class="date">1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="assets/images/video-2.jpg" alt="Video Thumbnail">
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <span class="duration">8:32</span>
+                        </div>
+                        <div class="video-content">
+                            <h3>Exclusive Developer Interview</h3>
+                            <p>Behind the scenes with the creators of this year's biggest hit.</p>
+                            <div class="video-meta">
+                                <span class="views">856K views</span>
+                                <span class="date">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="assets/images/video-3.jpg" alt="Video Thumbnail">
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <span class="duration">15:20</span>
+                        </div>
+                        <div class="video-content">
+                            <h3>Gaming Hardware Buying Guide 2025</h3>
+                            <p>Everything you need to know about the latest gaming hardware.</p>
+                            <div class="video-meta">
+                                <span class="views">642K views</span>
+                                <span class="date">3 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-widget">
+            <h3>Most Popular</h3>
+            <div class="popular-list">
+                <div class="popular-item">
+                    <img src="assets/images/popular-1.jpg" alt="Popular Game">
+                    <div class="popular-content">
+                        <h4>Ultimate Battle Royale Championship</h4>
+                        <span class="views">2.1M views</span>
+                    </div>
+                </div>
+                <div class="popular-item">
+                    <img src="assets/images/popular-2.jpg" alt="Popular Review">
+                    <div class="popular-content">
+                        <h4>Revolutionary RPG Sets New Standards</h4>
+                        <span class="views">1.8M views</span>
+                    </div>
+                </div>
+                <div class="popular-item">
+                    <img src="assets/images/popular-3.jpg" alt="Popular News">
+                    <div class="popular-content">
+                        <h4>Next-Gen Console Features Revealed</h4>
+                        <span class="views">1.5M views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar-widget">
+            <h3>Upcoming Releases</h3>
+            <div class="upcoming-games">
+                <div class="upcoming-item">
+                    <img src="assets/images/upcoming-1.jpg" alt="Upcoming Game">
+                    <div class="upcoming-content">
+                        <h4>Space Explorer: Genesis</h4>
+                        <span class="release-date">March 15, 2025</span>
+                        <div class="platforms">PC, PS5, Xbox</div>
+                    </div>
+                </div>
+                <div class="upcoming-item">
+                    <img src="assets/images/upcoming-2.jpg" alt="Upcoming Game">
+                    <div class="upcoming-content">
+                        <h4>Medieval Kingdoms: War</h4>
+                        <span class="release-date">April 2, 2025</span>
+                        <div class="platforms">PC, Switch</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar-widget">
+            <h3>Follow GameHub</h3>
+            <div class="social-links">
+                <a href="#" class="social-link twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="#" class="social-link facebook"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" class="social-link twitch"><i class="fab fa-twitch"></i> Twitch</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Gaming</h4>
+                    <ul>
+                        <li><a href="#">PC Gaming</a></li>
+                        <li><a href="#">PlayStation</a></li>
+                        <li><a href="#">Xbox</a></li>
+                        <li><a href="#">Nintendo</a></li>
+                        <li><a href="#">Mobile Gaming</a></li>
+                        <li><a href="#">Esports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Entertainment</h4>
+                    <ul>
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">TV Shows</a></li>
+                        <li><a href="#">Anime & Manga</a></li>
+                        <li><a href="#">Comics</a></li>
+                        <li><a href="#">Technology</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Forums</a></li>
+                        <li><a href="#">User Reviews</a></li>
+                        <li><a href="#">Guides Database</a></li>
+                        <li><a href="#">Leaderboards</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About GameHub</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">Press Center</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.svg" alt="GameHub">
+                    <span>GameHub</span>
+                </div>
+                <p>&copy; 2025 GameHub Entertainment. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

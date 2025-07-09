@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - GameHub</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="region-selector">
+                    <i class="fas fa-globe"></i>
+                    <select id="region">
+                        <option value="global">Global</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="in">India</option>
+                        <option value="jp">Japan</option>
+                        <option value="au">Australia</option>
+                    </select>
+                </div>
+                <div class="auth-links">
+                    <a href="#" class="login-btn">Login</a>
+                    <a href="#" class="register-btn">Register</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.svg" alt="GameHub">
+                        <span class="logo-text">GameHub</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#">Gaming <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h4>Platforms</h4>
+                                    <a href="gaming/pc.html">PC</a>
+                                    <a href="gaming/playstation.html">PlayStation</a>
+                                    <a href="gaming/xbox.html">Xbox</a>
+                                    <a href="gaming/nintendo.html">Nintendo</a>
+                                    <a href="gaming/mobile.html">Mobile</a>
+                                </div>
+                                <div class="dropdown-section">
+                                    <h4>Content</h4>
+                                    <a href="reviews.html">Reviews</a>
+                                    <a href="previews.html">Previews</a>
+                                    <a href="guides.html">Guides</a>
+                                    <a href="esports.html">Esports</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="reviews.html" class="active">Reviews</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li class="dropdown">
+                            <a href="#">Entertainment <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <div class="dropdown-section">
+                                    <h4>Categories</h4>
+                                    <a href="entertainment/movies.html">Movies</a>
+                                    <a href="entertainment/tv.html">TV Shows</a>
+                                    <a href="entertainment/anime.html">Anime & Manga</a>
+                                    <a href="entertainment/tech.html">Tech</a>
+                                    <a href="entertainment/comics.html">Comics</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="guides.html">Guides</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search reviews...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Reviews</h1>
+                <p>In-depth reviews of the latest games, movies, TV shows, and tech</p>
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Reviews</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Content -->
+    <main class="reviews-page">
+        <div class="container">
+            <!-- Filters and Sorting -->
+            <section class="reviews-controls">
+                <div class="filter-section">
+                    <h3>Filter Reviews</h3>
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <label>Category:</label>
+                            <select id="categoryFilter">
+                                <option value="all">All Categories</option>
+                                <option value="games">Games</option>
+                                <option value="movies">Movies</option>
+                                <option value="tv">TV Shows</option>
+                                <option value="tech">Technology</option>
+                                <option value="comics">Comics</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Platform:</label>
+                            <select id="platformFilter">
+                                <option value="all">All Platforms</option>
+                                <option value="pc">PC</option>
+                                <option value="ps5">PlayStation 5</option>
+                                <option value="xbox">Xbox Series X|S</option>
+                                <option value="switch">Nintendo Switch</option>
+                                <option value="mobile">Mobile</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Score:</label>
+                            <select id="scoreFilter">
+                                <option value="all">All Scores</option>
+                                <option value="9-10">9.0 - 10.0</option>
+                                <option value="8-9">8.0 - 8.9</option>
+                                <option value="7-8">7.0 - 7.9</option>
+                                <option value="6-7">6.0 - 6.9</option>
+                                <option value="0-6">Below 6.0</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label>Sort by:</label>
+                            <select id="sortBy">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="score-high">Highest Score</option>
+                                <option value="score-low">Lowest Score</option>
+                                <option value="title">Title A-Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Review -->
+            <section class="featured-review">
+                <div class="featured-review-card">
+                    <div class="featured-review-image">
+                        <img src="assets/images/review-1.jpg" alt="Featured Review">
+                        <div class="score-badge large">9.5</div>
+                        <div class="featured-badge">Editor's Choice</div>
+                    </div>
+                    <div class="featured-review-content">
+                        <span class="category">Game Review</span>
+                        <h2>Stellar Odyssey 2: A Masterpiece of Space Exploration</h2>
+                        <p>The highly anticipated sequel to Stellar Odyssey delivers everything fans hoped for and more. With stunning visuals, compelling storytelling, and revolutionary gameplay mechanics, this space adventure sets a new standard for the genre.</p>
+                        <div class="review-details">
+                            <div class="detail-item">
+                                <i class="fas fa-gamepad"></i>
+                                <span>PC, PS5, Xbox Series X|S</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>Reviewed: January 8, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-user"></i>
+                                <span>By Alex Chen</span>
+                            </div>
+                        </div>
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h4><i class="fas fa-thumbs-up"></i> Pros</h4>
+                                <ul>
+                                    <li>Breathtaking visuals and art direction</li>
+                                    <li>Compelling narrative with memorable characters</li>
+                                    <li>Innovative gameplay mechanics</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4><i class="fas fa-thumbs-down"></i> Cons</h4>
+                                <ul>
+                                    <li>Minor technical issues on launch</li>
+                                    <li>Learning curve for new mechanics</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="read-full-btn">Read Full Review</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reviews Grid -->
+            <section class="reviews-grid-section">
+                <div class="section-header">
+                    <h2>All Reviews</h2>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                        <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+                
+                <div class="reviews-grid" id="reviewsGrid">
+                    <!-- Review cards will be populated by JavaScript -->
+                </div>
+                
+                <div class="load-more-section">
+                    <button class="load-more-btn" id="loadMoreReviews">Load More Reviews</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Gaming</h4>
+                    <ul>
+                        <li><a href="#">PC Gaming</a></li>
+                        <li><a href="#">PlayStation</a></li>
+                        <li><a href="#">Xbox</a></li>
+                        <li><a href="#">Nintendo</a></li>
+                        <li><a href="#">Mobile Gaming</a></li>
+                        <li><a href="#">Esports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Entertainment</h4>
+                    <ul>
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">TV Shows</a></li>
+                        <li><a href="#">Anime & Manga</a></li>
+                        <li><a href="#">Comics</a></li>
+                        <li><a href="#">Technology</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Forums</a></li>
+                        <li><a href="#">User Reviews</a></li>
+                        <li><a href="#">Guides Database</a></li>
+                        <li><a href="#">Leaderboards</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About GameHub</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">Press Center</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.svg" alt="GameHub">
+                    <span>GameHub</span>
+                </div>
+                <p>&copy; 2025 GameHub Entertainment. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitch"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/reviews.js"></script>
+</body>
+</html>

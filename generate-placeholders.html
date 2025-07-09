@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .generator {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        button {
+            background: #00d4ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0099cc;
+        }
+        .preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .preview-item {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>GameHub Placeholder Image Generator</h1>
+    
+    <div class="generator">
+        <h3>Generate All Placeholder Images</h3>
+        <button onclick="generateAllImages()">Generate All Images</button>
+        <button onclick="downloadAllImages()">Download All Images</button>
+    </div>
+
+    <div class="preview" id="preview"></div>
+
+    <script>
+        const images = [
+            { name: 'hero-game', width: 600, height: 400, text: 'Stellar Odyssey 2', bg: '#1a1a1a', color: '#00d4ff' },
+            { name: 'trending-1', width: 400, height: 250, text: 'Breaking News', bg: '#ff4444', color: 'white' },
+            { name: 'trending-2', width: 400, height: 250, text: 'Exclusive Interview', bg: '#10b981', color: 'white' },
+            { name: 'trending-3', width: 400, height: 250, text: 'Esports Championship', bg: '#8b5cf6', color: 'white' },
+            { name: 'news-1', width: 400, height: 250, text: 'Major Gaming Update', bg: '#3b82f6', color: 'white' },
+            { name: 'news-2', width: 400, height: 250, text: 'Tech Innovation', bg: '#f59e0b', color: 'white' },
+            { name: 'news-3', width: 400, height: 250, text: 'Movie Trailer', bg: '#ef4444', color: 'white' },
+            { name: 'news-4', width: 400, height: 250, text: 'Esports Tournament', bg: '#06b6d4', color: 'white' },
+            { name: 'review-1', width: 400, height: 250, text: 'Cyberpunk Adventure', bg: '#6366f1', color: 'white' },
+            { name: 'review-2', width: 400, height: 250, text: 'Fantasy Quest', bg: '#10b981', color: 'white' },
+            { name: 'review-3', width: 400, height: 250, text: 'Galactic Warriors', bg: '#f59e0b', color: 'white' },
+            { name: 'video-1', width: 600, height: 338, text: 'Top 10 Games 2025', bg: '#1a1a1a', color: '#00d4ff' },
+            { name: 'video-2', width: 600, height: 338, text: 'Developer Interview', bg: '#2563eb', color: 'white' },
+            { name: 'video-3', width: 600, height: 338, text: 'Hardware Guide 2025', bg: '#dc2626', color: 'white' },
+            { name: 'popular-1', width: 300, height: 200, text: 'Battle Royale', bg: '#7c3aed', color: 'white' },
+            { name: 'popular-2', width: 300, height: 200, text: 'Revolutionary RPG', bg: '#059669', color: 'white' },
+            { name: 'popular-3', width: 300, height: 200, text: 'Console Features', bg: '#dc2626', color: 'white' },
+            { name: 'upcoming-1', width: 300, height: 200, text: 'Space Explorer', bg: '#1e40af', color: 'white' },
+            { name: 'upcoming-2', width: 300, height: 200, text: 'Medieval Kingdoms', bg: '#92400e', color: 'white' }
+        ];
+
+        function generateImage(config) {
+            const canvas = document.createElement('canvas');
+            canvas.width = config.width;
+            canvas.height = config.height;
+            const ctx = canvas.getContext('2d');
+
+            // Background
+            ctx.fillStyle = config.bg;
+            ctx.fillRect(0, 0, config.width, config.height);
+
+            // Gradient overlay
+            const gradient = ctx.createLinearGradient(0, 0, config.width, config.height);
+            gradient.addColorStop(0, 'rgba(0, 0, 0, 0.3)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0.6)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, config.width, config.height);
+
+            // Text
+            ctx.fillStyle = config.color;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            const fontSize = Math.min(config.width / 10, config.height / 6);
+            ctx.font = `bold ${fontSize}px Arial`;
+            
+            ctx.fillText(config.text, config.width / 2, config.height / 2);
+
+            // GameHub watermark
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+            ctx.font = `${fontSize * 0.3}px Arial`;
+            ctx.fillText('GameHub', config.width / 2, config.height - 20);
+
+            return canvas;
+        }
+
+        function generateAllImages() {
+            const preview = document.getElementById('preview');
+            preview.innerHTML = '';
+
+            images.forEach(config => {
+                const canvas = generateImage(config);
+                
+                const item = document.createElement('div');
+                item.className = 'preview-item';
+                
+                const title = document.createElement('h4');
+                title.textContent = config.name;
+                
+                const downloadBtn = document.createElement('button');
+                downloadBtn.textContent = 'Download';
+                downloadBtn.onclick = () => downloadImage(canvas, config.name);
+                
+                item.appendChild(title);
+                item.appendChild(canvas);
+                item.appendChild(downloadBtn);
+                
+                preview.appendChild(item);
+            });
+        }
+
+        function downloadImage(canvas, name) {
+            const link = document.createElement('a');
+            link.download = `${name}.jpg`;
+            link.href = canvas.toDataURL('image/jpeg', 0.9);
+            link.click();
+        }
+
+        function downloadAllImages() {
+            images.forEach((config, index) => {
+                setTimeout(() => {
+                    const canvas = generateImage(config);
+                    downloadImage(canvas, config.name);
+                }, index * 100);
+            });
+        }
+
+        // Generate images on load
+        window.onload = () => {
+            generateAllImages();
+        };
+    </script>
+</body>
+</html>
