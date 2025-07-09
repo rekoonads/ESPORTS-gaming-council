@@ -15,9 +15,10 @@ interface ArticleFilter {
   search?: string;
   sort?: "date_desc" | "date_asc" | "title_asc";
   limit?: number;
+  page?: number;
 }
 
-export async function fetchArticles({ category, search, sort = "date_desc", limit = 20 }: ArticleFilter = {}): Promise<Article[]> {
+export async function fetchArticles({ category, search, sort = "date_desc", limit = 12, page = 1 }: ArticleFilter = {}): Promise<Article[]> {
   const order =
     sort === "date_asc"
       ? "| order(publishedAt asc)"
@@ -28,7 +29,10 @@ export async function fetchArticles({ category, search, sort = "date_desc", limi
   const categoryFilter = category ? ` && category->slug.current == $category` : "";
   const searchFilter = search ? ` && title match $search` : "";
 
-  const query = `*[_type=="article"${categoryFilter}${searchFilter}] ${order}[0...$limit]{
+  const start = (page - 1) * limit;
+  const end = start + limit;
+
+  const query = `*[_type=="article"${categoryFilter}${searchFilter}] ${order}[${start}...${end}]{
     _id,
     title,
     "slug": slug.current,
@@ -45,7 +49,29 @@ export async function fetchArticles({ category, search, sort = "date_desc", limi
     category,
     search: search ? `*${search}*` : undefined,
     limit,
+    start,
   });
+}
+
+export async function countArticles({ category, search }: { category?: string; search?: string } = {}) {
+  const categoryFilter = category ? ` && category->slug.current == $category` : "";
+  const searchFilter = search ? ` && title match $search` : "";
+  return sanity.fetch(`count(*[_type=="article"${categoryFilter}${searchFilter}])`, {
+    category,
+    search: search ? `*${search}*` : undefined,
+  });
+}
+
+export async function fetchFeaturedArticle() {
+  const query = `*[_type=="article"] | order(publishedAt desc)[0]{
+    _id,
+    title,
+    "slug": slug.current,
+    "hero": mainImage.asset->url,
+    excerpt,
+    publishedAt
+  }`;
+  return sanity.fetch(query);
 }
 
 export async function fetchArticleBySlug(slug: string): Promise<Article | null> {

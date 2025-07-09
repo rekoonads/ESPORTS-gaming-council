@@ -9,3 +9,4 @@ export { default as Prose } from "./Prose";
 export { default as CategoryNav } from "./filters/CategoryNav";
 export { default as SortSelect } from "./filters/SortSelect";
 export { default as SearchBar } from "./filters/SearchBar";
+export { default as Pagination } from "./Pagination";
